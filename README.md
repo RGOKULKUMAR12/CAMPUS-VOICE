@@ -20,8 +20,9 @@
 - **Database:** MySQL
 - **API:** REST API
 
+## 📄 SRS Document
+For a detailed **overview** and **workflow** of the project, you can view the [Software Requirement Specification (SRS) document](https://github.com/RGOKULKUMAR12/CAMPUS-VOICE/blob/main/34_7376222AL131_PROJECT%20FLOW.pdf).
+
 ## 🚧 Project Status
 This project is currently **under development**. More features and improvements are on the way!
 
-## 📄 SRS Document
-For a detailed **overview** and **workflow** of the project, you can view the [Software Requirement Specification (SRS) document](https://github.com/RGOKULKUMAR12/CAMPUS-VOICE/blob/main/34_7376222AL131_PROJECT%20FLOW.pdf).
