@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Voice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="U2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../img/v19_2.png" alt="Logo" class="aa" style="width: 120px; height: 120px;">
+                <h2 style="color: black;">CAMPUS VOICE</h2>
+            </div>
+            <div class="buttons">
+                <button class="nav-btn active" id="Overview-btn">Overview</button>
+                <button class="nav-btn" onclick="navigateToPage()" id="Add Grievance">Add Grievance</button>
+                <button class="logout-btn" id="Logout" onclick="navigateToPage1()">Logout</button>
+            </div>
+            <div class="profile">
+            </div>
+        </div>
+
+        <!-- Notification Icon -->
+        <div class="notification">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count">3</span>
+        </div>
+
+        <div class="main-content">
+            <h1>Overview</h1>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="grievances-section">
+                <h2>Public Grievances</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Grievance Type</th>
+                            <th>Grievance</th>
+                            <th>Author</th>
+                            <th>Upvote</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="viewGrievanceDetails(1024, 'Transport', 'Driver Rash Driving', 'Public')">
+                            <td>1024</td>
+                            <td>Transport</td>
+                            <td>Driver Rash Driving</td>
+                            <td>7376222AL131</td>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td><i class="fas fa-comments" onclick="openComments(event, 1024)"></i></td>
+                        </tr>
+                        <tr onclick="viewGrievanceDetails(1290, 'Food', 'Food is not good', 'Public')">
+                            <td>1290</td>
+                            <td>Food</td>
+                            <td>Food is not good</td>
+                            <td>IT24356</td>
+                            <td><i class="fas fa-arrow-up"></i></td>
+                            <td><i class="fas fa-comments" onclick="openComments(event, 1290)"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grievances-section">
+                <h2>Your Grievance</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Grievance Type</th>
+                            <th>Grievance</th>
+                            <th>Grievance Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="viewGrievanceDetails(1024, 'Transport', 'Driver Rash Driving', 'Public')">
+                            <td>1024</td>
+                            <td>Transport</td>
+                            <td>Driver Rash Driving</td>
+                            <td>Public</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr onclick="viewGrievanceDetails(1025, 'Ragging', 'Senior Ragged Me', 'Anonymous')">
+                            <td>1025</td>
+                            <td>Ragging</td>
+                            <td>Senior Ragged Me</td>
+                            <td>Anonymous</td>
+                            <td><span class="status complete">Complete</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="add-grievance-btn" onclick="navigateToPage()"><i class="fas fa-plus-circle"></i> Add Grievance</button>
+        </div>
+
+        <!-- Grievance Details Section -->
+        <div id="grievance-details" class="main-content" style="display: none;">
+            <h2>Grievance Details</h2>
+            <div class="details-container">
+                <p><strong>ID:</strong> <span id="grievance-id"></span></p>
+                <p><strong>Type:</strong> <span id="grievance-type"></span></p>
+                <p><strong>Grievance:</strong> <span id="grievance-text"></span></p>
+                <p><strong>Grievance Type:</strong> <span id="grievance-category"></span></p>
+            </div>
+            <div id="comments-section" class="comments-container">
+                <h3>Comments</h3>
+                <ul id="comments-list"></ul>
+                <textarea id="comment-input" placeholder="Add a comment..."></textarea>
+                <br>
+                <button onclick="submitComment()" class="submit-button">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation functions
+        function navigateToPage() {
+            window.location.href = 'U3.html'; // Ensure this file path is correct
+        }
+
+        function navigateToPage1() {
+            window.location.href = 'U1.html'; // Ensure this file path is correct
+        }
+
+        // View grievance details
+        function viewGrievanceDetails(id, type, grievance, grievanceType) {
+            const grievanceDetails = document.getElementById('grievance-details');
+            grievanceDetails.style.display = 'block';
+
+            document.getElementById('grievance-id').textContent = id;
+            document.getElementById('grievance-type').textContent = type;
+            document.getElementById('grievance-text').textContent = grievance;
+            document.getElementById('grievance-category').textContent = grievanceType;
+        }
+
+        // Open comments modal
+        function openComments(event, grievanceId) {
+            event.stopPropagation();
+            alert(`Add comments for Grievance ID: ${grievanceId}`);
+        }
+
+        // Submit comment
+        function submitComment() {
+            const commentInput = document.getElementById('comment-input');
+            const commentText = commentInput.value;
+            if (commentText) {
+                const commentsList = document.getElementById('comments-list');
+                const newComment = document.createElement('li');
+                newComment.textContent = commentText;
+                commentsList.appendChild(newComment);
+                commentInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Grievances</title>
+    <link rel="stylesheet" href="U3.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../img/v19_2.png" alt="Logo">
+                <h2 style="color: black;">CAMPUS VOICE</h2>
+            </div>
+            <div class="buttons">
+                <button class="nav-btn" id="public-btn">Public</button>
+                <button class="nav-btn" id="private-btn">Private</button>
+                <button class="nav-btn" id="anonymous-btn">Anonymous</button>
+            </div>
+            <div class="profile">
+                <img src="user-logo.png" alt="PFP" style="color: black;">
+                <span style="color: black;">User</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="grievance-form" id="public-form">
+                <h1>PUBLIC GRIEVANCES</h1>
+                <form>
+                    <input type="text" placeholder="Enter Your Name" id="name" required>
+                    <input type="text" placeholder="Enter Your Reg. No" id="regno" required>
+                    <input type="text" placeholder="Enter the Type of Grievance" id="type" required>
+                    <textarea placeholder="Enter the Grievance" id="grievance" required></textarea>
+                    <label for="proof-public">Upload Proof (Photo/Video):</label>
+                    <input type="file" id="proof-public" accept="image/*,video/*">
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+
+            <div class="grievance-form" id="private-form">
+                <h1>PRIVATE GRIEVANCES</h1>
+                <form>
+                    <input type="text" placeholder="Enter Your Name" id="name-private" required>
+                    <input type="text" placeholder="Enter Your Reg. No" id="regno-private" required>
+                    <input type="text" placeholder="Enter the Type of Grievance" id="type-private" required>
+                    <textarea placeholder="Enter the Grievance" id="grievance-private" required></textarea>
+                    <label for="proof-private">Upload Proof (Photo/Video):</label>
+                    <input type="file" id="proof-private" accept="image/*,video/*">
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+
+            <div class="grievance-form" id="anonymous-form">
+                <h1>ANONYMOUS GRIEVANCES</h1>
+                <form>
+                    <input type="text" placeholder="Enter the Type of Grievance" id="type-anonymous" required>
+                    <textarea placeholder="Enter the Grievance" id="grievance-anonymous" required></textarea>
+                    <label for="proof-anonymous">Upload Proof (Photo/Video):</label>
+                    <input type="file" id="proof-anonymous" accept="image/*,video/*">
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="U3.js"></script>
+</body>
+</html>

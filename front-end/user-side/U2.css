@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E3FDFD;
+    display: flex;
+    height: 100vh;
+}
+
+.aa{
+    width: 500px;
+}
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #A6E3E9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;    
+    height: 100%;
+}
+
+.logout-btn {
+    background-color:  rgba(255, 255, 255, 0.874);
+    color: black;
+    padding: 15px;
+    border: none;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 20px; /* Make the button stick to the bottom */
+}
+
+.logout-btn:hover {
+    background-color: #4e00c7; /* Darker purple when hovered */
+    transform: translateY(-3px); /* Moves button up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+    color: #EEEEEE;
+}
+
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    font-size: 1.6em;
+    letter-spacing: 1px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+/* General button styling (unchanged) */
+.nav-btn {
+    background-color: rgba(255, 255, 255, 0.874);
+    color: black;
+    padding: 15px;
+    border: none;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for 3D effect */
+}
+
+/* Highlight for the Overview button (active class) */
+.nav-btn.active {
+    background-color: goldenrod; /* Highlight color */
+    color: white; /* Text color for the active state */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Darker shadow for the active button */
+}
+
+/* Hover effect for the active button */
+.nav-btn.active:hover {
+    background-color: #4e00c7; /* Darker purple when hovered */
+    transform: translateY(-3px); /* Moves button up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+    color: #EEEEEE;
+}
+
+
+.nav-btn:hover {
+    background-color: #6200ea;
+    transform: translateY(-3px); /* Moves button up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+    color: #EEEEEE;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 20%;
+    overflow: auto;
+}
+
+.main-content h1 {
+    margin-bottom: 20px;
+}
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 200px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: medium;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for 3D effect */
+    transition: all 0.3s ease;
+}
+
+.search-btn {
+    padding: 10px;
+    background-color: #71C9CE;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Combined hover effect for both input and button */
+.search-container:hover .search-input, 
+.search-container:hover .search-btn {
+    transform: translateY(-3px); /* Moves both elements up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Adds a deeper shadow for hover effect */
+}
+
+.grievances-section {
+    margin-bottom: 40px;
+}
+
+.grievances-section h2 {
+    margin-bottom: 10px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #71C9CE;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+td button.upvote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+td button.upvote-btn:hover {
+    color: #232a32;
+}
+
+/* Status Styling */
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.status.pending {
+    background-color: #f48f02;
+}
+
+.status.complete {
+    background-color: #00ff00;
+}
+
+.add-grievance-btn {
+    background-color: goldenrod;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;    
+    transition: background-color 0.3s ease;
+    margin-left: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for 3D effect */
+
+}
+
+.add-grievance-btn:hover {
+    background-color: #4e00c7; /* Darker purple when hovered */
+    transform: translateY(-3px); /* Moves button up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Hidden class to toggle visibility */
+.hidden {
+    display: none;
+}
+
+/* Comment Section Styling */
+.comment-section {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow */
+    margin-top: 20px;
+    font-family: Arial, sans-serif; /* Ensure consistent font */
+}
+
+.comment-section h3 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #333333; /* Dark text for contrast */
+}
+
+/* Comments Area */
+.comments {
+    margin-bottom: 15px;
+    max-height: 200px; /* Limit height if there are too many comments */
+    overflow-y: auto; /* Enable scrolling for long comment lists */
+}
+
+.comment {
+    margin-bottom: 10px;
+    font-size: 1em;
+    padding: 10px;
+    background-color: #f7f7f7; /* Light background for comments */
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Subtle border for separation */
+}
+
+/* Text Area for Adding Comments */
+.comment-box {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    resize: none; /* Disable resizing for consistency */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth focus transition */
+}
+
+.comment-box:focus {
+    border-color: #71C9CE; /* Highlight border on focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on focus */
+    outline: none;
+}
+
+/* Submit Button Styling */
+.submit-comment-btn {
+    background-color: goldenrod;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds depth */
+}
+
+.submit-comment-btn:hover {
+    background-color: #4e00c7; /* Darker shade on hover */
+    transform: translateY(-3px); /* Slight upward motion */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Adjustments for Responsive Design */
+@media (max-width: 768px) {
+    .comment-section {
+        padding: 15px;
+    }
+
+    .comment-box {
+        font-size: 0.9em;
+    }
+
+    .submit-comment-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* General styling for the grievance detail section */
+#grievance-details {
+    font-size: 1.2rem; /* Increase font size */
+    line-height: 1.6; /* Add line spacing */
+    background-color: #a6e3e96a; /* Add a subtle background */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 8px; /* Round corners for better aesthetics */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 0%; 
+    width: 40%;/* Add subtle shadow */
+}
+
+/* Adjust the main content area */
+.main-content {
+    width: 80%; /* Increase the width of the main content */ /* Add space between the main content and details */
+}
+
+/* Adjust the detail section width */
+.detail-section {
+    width: 18%; /* Slightly reduce the width of the grievance detail section */
+}
+/* Style for the comment input box */
+#comments-section {
+    width: 100%; /* Full width */
+    font-size: 18px; /* Adjusted font size for readability */
+    padding: 15px; /* Generous padding for a clean look */
+    border: 2px solid #0000001e; /* Add a vibrant border color */
+    border-radius: 8px; /* Smooth rounded corners */
+    background-color: #f9f9f9; /* Light background for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-top: 15px; /* Spacing above */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for the comment box */
+#comments-section:focus {
+    border-color: #00000000; /* Darker blue on focus */
+    box-shadow: 0 0 10px rgba(0, 91, 187, 0.5); /* Add glow effect */
+    outline: none; /* Remove default outline */
+}
+
+/* Style the submit button */
+.submit-button {
+    background-color: goldenrod; /* Bright green button */
+    color: #fff; /* White text for contrast */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Make text bold */
+    padding: 12px 20px; /* Padding for better usability */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Spacing above */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for the submit button */
+.submit-button:hover {
+    background-color: #6200ea; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}

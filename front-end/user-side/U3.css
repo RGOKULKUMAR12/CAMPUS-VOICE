@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E3FDFD;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #A6E3E9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    font-size: 1.6em;
+    letter-spacing: 1px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.nav-btn {
+    background-color:  rgba(255, 255, 255, 0.874);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border: none;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for 3D effect */
+}
+
+.nav-btn:hover {
+    background-color: #6200ea;
+    transform: translateY(-3px); /* Moves button up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+}
+
+.nav-btn.active {
+    background-color: goldenrod; /* Active button color */
+    color: #ffffff; /* Text color when active */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for active button */
+}
+
+.nav-btn.active:hover {
+    background-color: #6200ea; /* Change to purple on hover */
+    color: white; /* Change text color to white on hover */
+    transform: translateY(-3px); /* Moves button up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.profile span {
+    font-size: 1.2em;
+    color: white;
+}
+
+.content {
+    margin-left: 20%;
+    padding: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: center; /* Center forms horizontally */
+    align-items: center;     /* Center forms vertically */
+    height: calc(100vh - 40px); /* Full height minus padding */
+}
+
+.grievance-form {
+    background: #A6E3E9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;          /* Fixed width for forms */
+    max-width: 90%;       /* Responsive max width */
+    display: none;        /* Hidden by default */
+    opacity: 0;          /* Start as invisible */
+    transition: opacity 0.5s ease; /* Fade effect */
+}
+
+.grievance-form.active {
+    display: block; /* Show the form */
+    opacity: 1;     /* Fully visible */
+}
+
+.grievance-form h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.grievance-form input, 
+.grievance-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 252, 252, 0.897);
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.grievance-form textarea {
+    height: 150px; /* Increased height for the textarea */
+}
+
+/* Button styling inside form */
+.grievance-form button[type="submit"] {
+    background-color: goldenrod;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: auto; /* Button now auto-sizes based on its content */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.grievance-form button[type="submit"]:hover {
+    background-color: #6200ea;
+    transform: translateY(-3px);
+}
+
+/* Additional styles to ensure responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: space-around;
+        width: auto;
+    }
+
+    .nav-btn {
+        width: auto;
+        margin: 0 5px;
+    }
+
+    .content {
+        margin-left: 0; /* Remove left margin for mobile */
+        padding: 20px;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center items */
+    }
+
+    .grievance-form {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .profile {
+        display: none; /* Hide profile on mobile */
+    }
+}

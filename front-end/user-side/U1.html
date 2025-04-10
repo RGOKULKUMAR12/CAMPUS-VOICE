@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Voice Login</title>
+    <link rel="stylesheet" href="U1.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <img src="../img/v19_2.png" alt="BIT_LOGO" srcset="">
+            <h1>CAMPUS VOICE</h1>
+            
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="login-form">
+                <h2> Welcome back</h2>
+            
+            <br>
+                <!-- Google Login Button -->
+                <button class="google-login" onclick="navigateToPage()">
+                    <img src="../img/download-Photoroom.png" alt="Google Logo" class="google-logo">
+                    Sign in with Google
+                </button>
+                
+                <p class="or-text">Or log in with your credentials</p>
+                
+                <form id="loginForm">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateToPage() {
+            window.location.href = 'U2.html';
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = '../ADMIN SIDE/dash.html';
+        });
+    </script>
+</body>
+</html>
