@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+    <script defer src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <i class="fas fa-user-circle user-icon"></i>
+                <span>M-TEAM-1</span>
+            </div>
+            <nav class="nav-btn">
+                <ul>
+                    <li><a href="#overview" class="active"><i class="fas fa-home "></i> Overview</a></li>
+                    <li><a href="./APUB.html"><i class="fas fa-users"></i> Public Grievances</a></li>
+                    <li><a href="./APRI.html"><i class="fas fa-user-lock"></i> Private Grievances</a></li>
+                    <li><a href="./AANON.html"><i class="fas fa-user-secret"></i> Anonymous Grievance</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <h1>Overview</h1>
+            <div class="statistics">
+                <div class="stat-card">
+                    <h2>Total Grievances</h2>
+                    <p class="stat-number">736</p>
+                    <p class="stat-change positive">+11.02% <i class="fas fa-arrow-up"></i></p>
+                </div>
+                <div class="stat-card">
+                    <h2>Public Grievance</h2>
+                    <p class="stat-number">367</p>
+                    <p class="stat-change negative">-0.03% <i class="fas fa-arrow-down"></i></p>
+                </div>
+                <div class="stat-card">
+                    <h2>Private Grievance</h2>
+                    <p class="stat-number">56</p>
+                    <p class="stat-change positive">+15.03% <i class="fas fa-arrow-up"></i></p>
+                </div>
+                <div class="stat-card">
+                    <h2>Anonymous Grievance</h2>
+                    <p class="stat-number">218</p>
+                    <p class="stat-change positive">+6.08% <i class="fas fa-arrow-up"></i></p>
+                </div>
+            </div>
+
+            <!-- Grievances Table -->
+            <h1>Grievances</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Grievance</th>
+                        <th>Date</th>
+                        <th>Author</th>
+                        <th>Status</th>
+                        <th>Upwards</th>
+                        <th>Type of Grievances</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DRIVER IS RASH DRIVING</td>
+                        <td>Mar 10, 2024</td>
+                        <td>GOKUL KUMAR R</td>
+                        <td><span class="status complete">Complete</span></td>
+                        <td>9</td>
+                        <td>PUBLIC</td>
+                    </tr>
+                    <tr>
+                        <td>NO PROPER WIFI NETWORK</td>
+                        <td>Nov 10, 2024</td>
+                        <td>HARI PRASATH S</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td>8</td>
+                        <td>PUBLIC</td>
+                    </tr>
+                    <tr>
+                        <td>FLOOR IS NOT CLEAN</td>
+                        <td>Dec 20, 2024</td>
+                        <td>SANGEERTHAN P</td>
+                        <td><span class="status complete">Complete</span></td>
+                        <td>7</td>
+                        <td>PUBLIC</td>
+                    </tr>
+                    <tr>
+                        <td>RESTROOMS ARE NOT CLEAN</td>
+                        <td>Jul 25, 2024</td>
+                        <td>SUMALESH K A</td>
+                        <td><span class="status rejected">Rejected</span></td>
+                        <td>6</td>
+                        <td>PUBLIC</td>
+                    </tr>
+                    <tr>
+                        <td>AC NOT WORKING PROPERLY</td>
+                        <td>May 25, 2024</td>
+                        <td>GIRI</td>
+                        <td><span class="status complete">Complete</span></td>
+                        <td> - </td>
+                        <td>PRIVATE</td>
+                    </tr>
+                    <tr>
+                        <td>BUS IS NOT ON TIME</td>
+                        <td>Jan 06, 2025</td>
+                        <td>Dil Raaj</td>
+                        <td><span class="status pending">pending</span></td>
+                        <td>-</td>
+                        <td>PRIVATE</td>
+                    </tr>
+                    <tr>
+                        <td>TECHNICIAN HARASSED ME</td>
+                        <td>Feb 25, 2025</td>
+                        <td>-</td>
+                        <td><span class="status complete">complete</span></td>
+                        <td>-</td>
+                        <td>ANONYMOUS</td>
+                    </tr>
+                    <tr>
+                        <td>Chair has broken in Mess</td>
+                        <td>Jul 25, 2024</td>
+                        <td>-</td>
+                        <td><span class="status rejected">Rejected</span></td>
+                        <td>-</td>
+                        <td>ANONYMOUS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- External JS File -->
+    <script src="dash.js"></script>
+</body>
+</html>

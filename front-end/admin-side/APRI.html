@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Grievances</title>
+    <link rel="stylesheet" href="APRI.css">
+    <script defer src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <i class="fas fa-user-circle user-icon"></i>
+                <span>M-TEAM-1</span>
+            </div>
+            <nav class="nav-btn">
+                <ul>
+                    <li><a href="./dash.html"><i class="fas fa-home"></i> Overview</a></li>
+                    <li><a href="./APUB.html"><i class="fas fa-users"></i> Public Grievances</a></li>
+                    <li><a href="./APRI.html" class="active"><i class="fas fa-user-lock"></i> Private Grievances</a></li>
+                    <li><a href="./AANON.html"><i class="fas fa-user-secret"></i> Anonymous Grievance</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1>Private Grievances</h1>
+            <div class="grievance-table">
+                <table>
+                    <thead>
+                        <tr style="background-color: violet;">
+                            <th>Grievance</th>
+                            <th>Date</th>
+                            <th>Author</th>
+                            <th>Status</th>
+                            
+                            <th>Type Of Grievance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="openModal()">
+                            <td>Library Timings Are Inconvenient</td>
+                            <td>Feb 15, 2024</td>
+                            <td>RAHUL V</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>PRIVATE</td>
+                        </tr>
+                        <tr onclick="openModal()">
+                            <td>Personal Belongings Missing</td>
+                            <td>Apr 12, 2024</td>
+                            <td>PRIYA M</td>
+                            <td><span class="status complete">Complete</span></td>
+                            
+                            <td>PRIVATE</td>
+                        </tr>
+                        <tr onclick="openModal()">
+                            <td>Issues with WiFi Connectivity</td>
+                            <td>May 20, 2024</td>
+                            <td>ANIL K</td>
+                            <td><span class="status approved">Approved</span></td>
+                            <td>PRIVATE</td>
+                        </tr>
+                        <tr onclick="openModal()">
+                            <td>Noise Disturbance During Class</td>
+                            <td>Jun 30, 2024</td>
+                            <td>SNEHA R</td>
+                            <td><span class="status rejected">Rejected</span></td>
+                            <td>PRIVATE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for assigning grievance -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Assign Grievance</h2>
+            <form id="assignmentForm">
+                <div class="form-row">
+                    <label for="department">Department:</label>
+                    <input type="text" id="department" name="department" required>
+                </div>
+                <div class="form-row">
+                    <label for="assignedTo">Assigned To:</label>
+                    <input type="text" id="assignedTo" name="assignedTo" required>
+                </div>
+                <div class="form-row">
+                    <label for="deadline">Deadline:</label>
+                    <input type="date" id="deadline" name="deadline" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="APRI.js"></script>
+    <script>
+        function openModal() {
+            // Show the modal
+            const modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            // Hide the modal
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+
+            // Clear form inputs
+            document.getElementById("assignmentForm").reset();
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        // Handle form submission (you can customize this function as needed)
+        document.getElementById("assignmentForm").onsubmit = function(event) {
+            event.preventDefault(); // Prevent page refresh
+
+            // Here you can handle the form submission (e.g., send data to the server)
+            alert("Grievance assigned successfully!");
+
+            // Close the modal after submission
+            closeModal();
+        };
+    </script>
+</body>
+</html>

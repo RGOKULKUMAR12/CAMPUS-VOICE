@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dddddf;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}   
+
+.sidebar {
+    width: 20%;
+    background-color: #180237;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;    
+    height: 100%;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-icon {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.nav-btn {
+    width: 100%; /* Ensure it takes full width */
+}
+
+.nav-btn ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-btn li {
+    width: 100%;
+}
+
+/* Navigation button styles */
+.nav-btn a {
+    display: flex;  /* Ensures icon and text align on a single line */
+    align-items: center; /* Center aligns icon and text */
+    justify-content: flex-start; /* Aligns items to the start */
+    background-color: rgba(177, 177, 177, 0.874);
+    color: black;
+    font-weight: 500;
+    padding: 15px;
+    border: none;
+    width: 80%;
+    margin: 10px 0;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none; /* Remove underline */
+}
+
+
+/* Add margin to the icon to create space */
+
+
+
+/* Highlight for the Overview button (active class) */
+.nav-btn a.active {
+    background-color: goldenrod; /* Highlight color */
+    color: white; /* Text color for the active state */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Darker shadow for the active button */
+}
+
+/* Hover effect for the active button */
+.nav-btn a.active:hover {
+    background-color: #4e00c7; /* Darker purple when hovered */
+    transform: translateY(-3px); /* Moves button up on hover */
+}
+
+.nav-btn a:hover {
+    background-color: #6200ea;
+    transform: translateY(-3px); /* Moves button up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 20%; /* Margin to account for sidebar */
+    overflow: auto;
+}
+
+.main-content h1 {
+    margin-bottom: 20px;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.stat-change {
+    font-size: 1em;
+}
+
+.stat-change.positive {
+    color: #5cb85c; /* Green for positive changes */
+}
+
+.stat-change.negative {
+    color: #d9534f; /* Red for negative changes */
+}
+
+.grievances-section {
+    margin-bottom: 40px;
+}
+
+.grievances-section h2 {
+    margin-bottom: 10px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #250356;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+td button.upvote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+td button.upvote-btn:hover {
+    color: #232a32;
+}
+
+/* Status Styling */
+.status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.status.complete {
+    background-color: #e6f8f2;
+    color: #28a745;
+}
+
+.status.pending {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.status.approved {
+    background-color: #fffae6;
+    color: #ffc107;
+}
+
+.status.rejected {
+    background-color: #ffe8e8;
+    color: #dc3545;
+}
+
+.add-grievance-btn {
+    background-color: goldenrod;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;    
+    transition: background-color 0.3s ease;
+    margin-left: 80%;
+}
+
+.add-grievance-btn:hover {
+    background-color: #232a32;
+}
+
+.nav-btn a i {
+    margin-right: 10px; /* Space between icon and text */
+}

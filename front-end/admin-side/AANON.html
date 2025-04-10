@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Grievances</title>
+    <link rel="stylesheet" href="AANON.css">
+    <script defer src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <i class="fas fa-user-circle user-icon"></i>
+                <span>M-TEAM-1</span>
+            </div>
+            <nav class="nav-btn">
+                <ul>
+                    <li><a href="./dash.html"><i class="fas fa-home"></i> Overview</a></li>
+                    <li><a href="./APUB.html"><i class="fas fa-users"></i> Public Grievances</a></li>
+                    <li><a href="./APRI.html"><i class="fas fa-user-lock"></i> Private Grievances</a></li>
+                    <li><a href="./AANON.html" class="active"><i class="fas fa-user-secret"></i> Anonymous Grievance</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Anonymous Grievances</h1>
+            </div>
+            <div class="grievance-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="background-color: #250356; color: white;">Grievance</th>
+                            <th style="background-color: #250356; color: white;">Date</th>
+                            <th style="background-color: #250356; color: white;">Status</th>
+                            <th style="background-color: #250356; color: white;">Type Of Grievances</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="openModal('Food Quality Is Poor', 'Feb 15, 2024', 'Pending', 'ANONYMOUS')">
+                            <td>Food Quality Is Poor</td>
+                            <td>Feb 15, 2024</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>ANONYMOUS</td>
+                        </tr>
+                        <tr onclick="openModal('Security Issues After Hours', 'Apr 12, 2024', 'Complete', 'ANONYMOUS')">
+                            <td>Security Issues After Hours</td>
+                            <td>Apr 12, 2024</td>
+                            <td><span class="status complete">Complete</span></td>
+                            <td>ANONYMOUS</td>
+                        </tr>
+                        <tr onclick="openModal('Gym Equipment Needs Repair', 'May 20, 2024', 'Approved', 'ANONYMOUS')">
+                            <td>Gym Equipment Needs Repair</td>
+                            <td>May 20, 2024</td>
+                            <td><span class="status approved">Approved</span></td>
+                            <td>ANONYMOUS</td>
+                        </tr>
+                        <tr onclick="openModal('Lack of Parking Spaces', 'Jun 30, 2024', 'Rejected', 'ANONYMOUS')">
+                            <td>Lack of Parking Spaces</td>
+                            <td>Jun 30, 2024</td>
+                            <td><span class="status rejected">Rejected</span></td>
+                            <td>ANONYMOUS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Assign Grievance</h2>
+            <form id="assignmentForm">
+                <label for="grievanceTitle">Grievance:</label>
+                <input type="text" id="grievanceTitle" name="grievanceTitle" readonly>
+                <label for="date">Date:</label>
+                <input type="text" id="date" name="date" readonly>
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" readonly>
+                <label for="department">Assign To Department:</label>
+                <select id="department" name="department" required>
+                    <option value="">Select a department</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Facilities">Facilities</option>
+                    <option value="Security">Security</option>
+                    <option value="Catering">Catering</option>
+                </select>
+                <button type="submit">Assign</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the modal and fill in the grievance details
+        function openModal(title, date, status, type) {
+            document.getElementById('grievanceTitle').value = title;
+            document.getElementById('date').value = date;
+            document.getElementById('status').value = status;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        };
+
+        // Prevent form submission for demonstration
+        document.getElementById('assignmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Grievance assigned to ' + document.getElementById('department').value);
+            closeModal();
+        });
+    </script>
+
+</body>
+</html>
